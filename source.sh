@@ -1,5 +1,5 @@
 # !/bin/bash
-# 0.4v
+# 0.5v
 function main_menu {
 opcao=0
 until [ "$opcao" = "4"]; do
@@ -32,7 +32,7 @@ function S {
 clear
 echo 
 echo "Alterando a source.list"
-sleep 4
+f_pausa
 echo -n > /etc/apt/sources.list
 echo "#" >> /etc/apt/sources.list
 echo "#------------------------------------------------------------------------------#" >> /etc/apt/sources.list
@@ -51,7 +51,7 @@ echo "deb-src http://security.debian.org/ stable/updates main" >> /etc/apt/sourc
 echo "#" >> /etc/apt/sources.list
 echo "deb http://ftp.debian.org/debian stretch-backports main" >> /etc/apt/sources.list
 echo "deb-src http://ftp.debian.org/debian stretch-backports main" >> /etc/apt/sources.list
-sleep 4
+f_pausa
 echo "Sources list alterada para Stable main contrib non-free"
 echo 
 f_add_repo
@@ -60,7 +60,7 @@ function T {
 clear
 echo
 echo "Alterando a source.list"
-sleep 4
+f_pausa
 echo -n > /etc/apt/sources.list
 echo "#" >> /etc/apt/sources.list
 echo "#------------------------------------------------------------------------------#" >> /etc/apt/sources.list
@@ -77,23 +77,23 @@ echo "#" >> /etc/apt/sources.list
 echo "deb http://security.debian.org/ testing/updates main" >> /etc/apt/sources.list
 echo "deb-src http://security.debian.org/ testing/updates main" >> /etc/apt/sources.list
 echo "#" >> /etc/apt/sources.list
-sleep 4
+f_pausa
 echo "Sources list alterada para Testing main contrib non-free"
 echo
 f_add_repo
 }
 function U {
-controle=$'wait'
+controle=$"wait"
 while [ "$controle" = "wait" ]; do
 echo -n "Tem certeza disso? [s/n]" 
 read resp
 echo
-if [ "$resp" = 's' ] || [ "$resp" = 'S' ];
+if [ "$resp" = "s" ] || [ "$resp" = "S" ];
 then
 	clear
 	echo
 	echo "Alterando a source.list"
-	sleep 2
+	f_pausa
 	echo -n > /etc/apt/sources.list
 	echo "#------------------------------------------------------------------------------#" >> /etc/apt/sources.list
 	echo "#                   OFFICIAL DEBIAN REPOS                    " >> /etc/apt/sources.list
@@ -103,16 +103,17 @@ then
 	echo "deb http://ftp.br.debian.org/debian/ unstable main contrib non-free" >> /etc/apt/sources.list
 	echo "deb-src http://ftp.br.debian.org/debian/ unstable main contrib non-free" >> /etc/apt/sources.list
 	echo "#" >> /etc/apt/sources.list
-	sleep 4
+	sleep 2
 	echo "Sources list alterada para Unstable main contrib non-free"
 	echo
 	f_add_repo
-	controle=$'ok'
-elif [ "$resp" = 'n' ] || [ "$resp" = 'N' ];
+	controle=$"ok"
+elif [ "$resp" = "n" ] || [ "$resp" = "N" ];
 then
 	echo "Saindo..."
-	sleep 4
-	exit
+	f_pausa
+	controle=$"ok"
+fi
 fi
 done
 }
@@ -121,7 +122,7 @@ function f_add_repo {
 op=0
 until [ "$op" = "5"]; do
 clear
-echo ""
+echo
 echo "Assistente para sources list Debian"
 echo
 echo 'Instalar repositórios não oficiais'
@@ -151,7 +152,7 @@ function GoogleChrome {
 clear
 echo
 echo "Alterando a source.list"
-sleep 4
+f_pausa
 echo "#" >> /etc/apt/sources.list
 echo "#------------------------------------------------------------------------------#" >> /etc/apt/sources.list
 echo "#                      UNOFFICIAL  REPOS                       " >> /etc/apt/sources.list
@@ -163,25 +164,25 @@ echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /e
 echo "#" >> /etc/apt/sources.list
 sleep 4
 echo "Sources list alterada!"
-sleep 4
+f_pausa
 echo
 }
 function Firefox {
 clear
 echo
-controle=$'wait'
+controle=$"wait"
 while [ "$controle" = "wait" ]; do
 echo "Mozila Firefox release/unstable só é compativél com Debian Testing ou ainda se você estiver usando o Debian Unstable adicionar este repositório não é necessário!"
 echo
 echo "Tem certeza disso? [s/n]" 
 read resp
 echo
-if [ "$resp" = 's' ] || [ "$resp" = 'S' ];
+if [ "$resp" = "s" ] || [ "$resp" = "S" ];
 then
 	clear
 	echo
 	echo "Alterando a source.list"
-	sleep 2
+	f_pausa
 	echo "#" >> /etc/apt/sources.list
 	echo "#------------------------------------------------------------------------------#" >> /etc/apt/sources.list
 	echo "#                      UNOFFICIAL  REPOS                       " >> /etc/apt/sources.list
@@ -190,16 +191,16 @@ then
 	echo "###Mozila Firefox release/unstable" >> /etc/apt/sources.list
 	echo "deb http://http.debian.net/debian unstable main" >> /etc/apt/sources.list
 	echo "#" >> /etc/apt/sources.list
-	sleep 4
+	f_pausa
 	echo "Sources list alterada!"
-	sleep 4
+	f_pausa
 	echo
-	controle=$'ok'
-elif [ "$resp" = 'n' ] || [ "$resp" = 'N' ];
+	controle=$"ok"
+elif [ "$resp" = "n" ] || [ "$resp" = "N" ];
 then
 	echo "Saindo..."
-	sleep 4
-	exit
+	f_pausa
+	controle=$"ok"
 fi
 done
 }
@@ -207,7 +208,7 @@ function Spotify {
 clear
 echo
 echo "Alterando a source.list"
-sleep 4
+f_pausa
 echo "#" >> /etc/apt/sources.list
 echo "#------------------------------------------------------------------------------#" >> /etc/apt/sources.list
 echo "#                      UNOFFICIAL  REPOS                       " >> /etc/apt/sources.list
@@ -216,16 +217,16 @@ echo "#" >> /etc/apt/sources.list
 echo "###Spotify" >> /etc/apt/sources.list
 echo "deb http://repository.spotify.com stable non-free" >> /etc/apt/sources.list
 echo "#" >> /etc/apt/sources.list
-sleep 4
+f_pausa
 echo "Sources list alterada!"
-sleep 4
+f_pausa
 echo
 }
 function Sublime { 
 clear
 echo
 echo "Alterando a source.list"
-sleep 4
+f_pausa
 echo "#" >> /etc/apt/sources.list
 echo "#------------------------------------------------------------------------------#" >> /etc/apt/sources.list
 echo "#                      UNOFFICIAL  REPOS                       " >> /etc/apt/sources.list
@@ -234,15 +235,23 @@ echo "#" >> /etc/apt/sources.list
 echo "###Sublime Text" >> /etc/apt/sources.list
 echo "deb https://download.sublimetext.com/ apt/stable/" >> /etc/apt/sources.list
 echo "#" >> /etc/apt/sources.list
-sleep 4
+f_pausa
 echo "Sources list alterada!"
-sleep 4
+f_pausa
 echo
+}
+function f_pausa { 
+sleep 1
+echo -n " ."
+sleep 1
+echo -n "."
+sleep 1
+echo -n "."
 }
 function Sair {
 clear
-sleep 4
-echo "Encerrando!" && sleep 4
+sleep 2
+echo "Encerrando!" && sleep 2
 exit
 }
 main_menu
