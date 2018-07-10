@@ -1,5 +1,5 @@
 # !/bin/bash
-
+# 0.4v
 function main_menu {
 opcao=0
 until [ "$opcao" = "4"]; do
@@ -23,7 +23,7 @@ case $opcao in
 	1 ) S;;
 	2 ) T;;
 	3 ) U;;
-	4 ) S;;
+	4 ) Sair;;
 	* ) tput setf 4;echo "Erro! Entradas válidas - 1, 2, 3 ou 4";tput setf 4; 
 esac
 done
@@ -119,7 +119,7 @@ done
 function f_add_repo {
 
 op=0
-until [ "$op" = "4"]; do
+until [ "$op" = "5"]; do
 clear
 echo ""
 echo "Assistente para sources list Debian"
@@ -142,8 +142,8 @@ case $op in
 	2 ) Firefox;;
 	3 ) Spotify;;
 	4 ) Sublime;;
-	5 ) S;;
-	* ) tput setf 4;echo "Erro! Entradas válidas - 1, 2, 3 ou 4";tput setf 4; 
+	5 ) Sair;;
+	* ) tput setf 4;echo "Erro! Entradas válidas - 1, 2, 3, 4 ou 5";tput setf 4; 
 esac
 done
 }
@@ -239,7 +239,7 @@ echo "Sources list alterada!"
 sleep 4
 echo
 }
-function S {
+function Sair {
 clear
 sleep 4
 echo "Encerrando!" && sleep 4
