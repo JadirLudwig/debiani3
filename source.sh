@@ -1,5 +1,5 @@
 # !/bin/bash
-# 0.5v
+# 0.5.1v
 function main_menu {
 opcao=0
 until [ "$opcao" = "4"]; do
@@ -113,7 +113,6 @@ then
 	echo "Saindo..."
 	f_pausa
 	controle=$"ok"
-fi
 fi
 done
 }
