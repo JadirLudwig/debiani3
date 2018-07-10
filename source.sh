@@ -1,5 +1,5 @@
 # !/bin/bash
-# 0.5.1v
+# 0.6v
 function main_menu {
 opcao=0
 until [ "$opcao" = "4"]; do
@@ -54,6 +54,7 @@ echo "deb-src http://ftp.debian.org/debian stretch-backports main" >> /etc/apt/s
 f_pausa
 echo "Sources list alterada para Stable main contrib non-free"
 echo 
+f_pausa
 f_add_repo
 }
 function T {
@@ -80,12 +81,13 @@ echo "#" >> /etc/apt/sources.list
 f_pausa
 echo "Sources list alterada para Testing main contrib non-free"
 echo
+f_pausa
 f_add_repo
 }
 function U {
 controle=$"wait"
 while [ "$controle" = "wait" ]; do
-echo -n "Tem certeza disso? [s/n]" 
+echo -n "Tem certeza disso? [s/n] " 
 read resp
 echo
 if [ "$resp" = "s" ] || [ "$resp" = "S" ];
@@ -103,15 +105,17 @@ then
 	echo "deb http://ftp.br.debian.org/debian/ unstable main contrib non-free" >> /etc/apt/sources.list
 	echo "deb-src http://ftp.br.debian.org/debian/ unstable main contrib non-free" >> /etc/apt/sources.list
 	echo "#" >> /etc/apt/sources.list
-	sleep 2
+	f_pausa
 	echo "Sources list alterada para Unstable main contrib non-free"
 	echo
+	f_pausa
 	f_add_repo
 	controle=$"ok"
 elif [ "$resp" = "n" ] || [ "$resp" = "N" ];
 then
 	echo "Saindo..."
 	f_pausa
+	f_add_repo
 	controle=$"ok"
 fi
 done
@@ -161,9 +165,10 @@ echo "###### 3rd Party Binary Repos" >> /etc/apt/sources.list
 echo "###Google Chrome Browser" >> /etc/apt/sources.list
 echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list
 echo "#" >> /etc/apt/sources.list
-sleep 4
+f_pausa
 echo "Sources list alterada!"
 f_pausa
+f_add_repo
 echo
 }
 function Firefox {
@@ -173,7 +178,7 @@ controle=$"wait"
 while [ "$controle" = "wait" ]; do
 echo "Mozila Firefox release/unstable só é compativél com Debian Testing ou ainda se você estiver usando o Debian Unstable adicionar este repositório não é necessário!"
 echo
-echo "Tem certeza disso? [s/n]" 
+echo "Tem certeza disso? [s/n] " 
 read resp
 echo
 if [ "$resp" = "s" ] || [ "$resp" = "S" ];
@@ -193,12 +198,14 @@ then
 	f_pausa
 	echo "Sources list alterada!"
 	f_pausa
+	f_add_repo
 	echo
 	controle=$"ok"
 elif [ "$resp" = "n" ] || [ "$resp" = "N" ];
 then
 	echo "Saindo..."
 	f_pausa
+	f_add_repo
 	controle=$"ok"
 fi
 done
@@ -219,6 +226,7 @@ echo "#" >> /etc/apt/sources.list
 f_pausa
 echo "Sources list alterada!"
 f_pausa
+f_add_repo
 echo
 }
 function Sublime { 
@@ -237,15 +245,16 @@ echo "#" >> /etc/apt/sources.list
 f_pausa
 echo "Sources list alterada!"
 f_pausa
+f_add_repo
 echo
 }
 function f_pausa { 
-sleep 1
+sleep 2
 echo -n " ."
-sleep 1
-echo -n "."
-sleep 1
-echo -n "."
+#sleep 1
+#echo -n "."
+#sleep 1
+#echo -n "."
 }
 function Sair {
 clear
