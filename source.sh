@@ -141,7 +141,7 @@ case $op in
 	2 ) Firefox;;
 	3 ) Spotify;;
 	4 ) Sublime;;
-	5 ) S
+	5 ) S;;
 	* ) tput setf 4;echo "Erro! Entradas válidas - 1, 2, 3 ou 4";tput setf 4; 
 esac
 done
