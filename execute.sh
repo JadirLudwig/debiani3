@@ -16,8 +16,16 @@ read resp
 echo
 if [ "$resp" = "s" ] || [ "$resp" = "S" ];
 then
-	chmod +x logo.sh sources_list.sh install_programs.sh confi3wm.sh final.sh
-	./logo.sh
+	chmod +x logo.sh sources_list.sh install_programs.sh confi3wm.sh final.sh atencao.sh execute2.sh
+	echo "Atualizando o Apt"
+	sleep 2
+	apt update
+	sleep 4
+	echo "Instalando o I3wm e o LightDM"
+	sleep 2
+	apt install i3 lightdm -y
+	sleep 4
+	./atencao.sh
 	controle=$"ok"
 elif [ "$resp" = "n" ] || [ "$resp" = "N" ];
 then
