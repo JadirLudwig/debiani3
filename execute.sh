@@ -16,7 +16,7 @@ read resp
 echo
 if [ "$resp" = "s" ] || [ "$resp" = "S" ];
 then
-	chmod +x logo.sh sources_list.sh install_programs.sh confi3wm.sh final.sh teste.sh
+	chmod +x logo.sh sources_list.sh install_programs.sh confi3wm.sh final.sh
 	~/debiani3/logo.sh
 	controle=$"ok"
 elif [ "$resp" = "n" ] || [ "$resp" = "N" ];
