@@ -1,0 +1,40 @@
+<?xml encoding="UTF-8" version="1.0"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Abrir terminal aqui</name>
+	<unique-id>1530887666979353-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Exemplo de uma ação personalizada</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon></icon>
+	<name>Extract here (bzip2)</name>
+	<unique-id>1531023847204516-1</unique-id>
+	<command>tar xjf %n</command>
+	<description></description>
+	<patterns>*</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon></icon>
+	<name>Search files</name>
+	<unique-id>1531063511376286-1</unique-id>
+	<command>catfish --path=%f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon></icon>
+	<name>Exrair com nome do arquivo</name>
+	<unique-id>1531107818608434-4</unique-id>
+	<command>extrair.sh %N</command>
+	<description>Exrair para pasta com nome do arquivo</description>
+	<patterns>*</patterns>
+	<other-files/>
+</action>
+</actions>

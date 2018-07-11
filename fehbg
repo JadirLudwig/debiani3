@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --bg-fill '/home/debi/.config/i3/background/linux_debian_brand_logo_spiral_93908_1920x1080.jpg' '/home/debi/.config/i3/background/linux_os_bw_text_30922_1600x1200.jpg' 
