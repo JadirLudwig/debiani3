@@ -17,7 +17,7 @@ echo
 if [ "$resp" = "s" ] || [ "$resp" = "S" ];
 then
 	chmod +x logo.sh sources_list.sh install_programs.sh confi3wm.sh final.sh teste.sh
-	~/Debiani3/logo.sh
+	~/debiani3/logo.sh
 	controle=$"ok"
 elif [ "$resp" = "n" ] || [ "$resp" = "N" ];
 then

@@ -34,4 +34,4 @@ echo "         ###"
 sleep 0.5
 echo "            ###"
 echo ""
-~/Debiani3/./sources_list.sh
+~/debiani3/./sources_list.sh

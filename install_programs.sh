@@ -125,6 +125,6 @@ carrega
 atualizaAPT
 instalarProgramas
 confSudo
-~/Debiani3/./confi3wm.sh
+~/debiani3/./confi3wm.sh
 
 
