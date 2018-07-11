@@ -67,7 +67,7 @@ update-grub
 sleep 2
 echo "Configurações terminadas"
 sleep 2
-~/debiani3/./final.sh
+./final.sh
 }
 carrega
 move

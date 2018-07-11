@@ -264,6 +264,6 @@ clear
 function Continuar {
 f_pausa
 echo "Continuando instalação"
-~/debiani3/install_programs.sh
+./install_programs.sh
 }
 main_menu
