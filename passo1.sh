@@ -10,8 +10,13 @@ function Stable {
 
 clear
 echo 
-echo "Alterando a source.list"
+echo "Alterando a source.list para Stable"
+echo
+
+
 f_pausa
+
+
 echo -n > /etc/apt/sources.list
 echo "#" >> /etc/apt/sources.list
 echo "#------------------------------------------------------------------------------#" >> /etc/apt/sources.list
@@ -30,11 +35,13 @@ echo "deb-src http://security.debian.org/ stable/updates main" >> /etc/apt/sourc
 echo "#" >> /etc/apt/sources.list
 echo "deb http://ftp.debian.org/debian stretch-backports main" >> /etc/apt/sources.list
 echo "deb-src http://ftp.debian.org/debian stretch-backports main" >> /etc/apt/sources.list
-f_pausa
+echo
 echo "Sources list alterada para Stable main contrib non-free"
 echo 
+
+
 f_pausa
-echo
+
 }
 
 #____________________________________________________________________________________________
@@ -43,8 +50,12 @@ function Testing {
 
 clear
 echo
-echo "Alterando a source.list"
+echo "Alterando a source.list para Testing"
+echo
+
 f_pausa
+
+
 echo -n > /etc/apt/sources.list
 echo "#" >> /etc/apt/sources.list
 echo "#------------------------------------------------------------------------------#" >> /etc/apt/sources.list
@@ -64,8 +75,10 @@ echo "#" >> /etc/apt/sources.list
 echo
 echo "Sources list alterada para Testing main contrib non-free"
 echo
+
+
 f_pausa
-echo
+
 }
 
 #____________________________________________________________________________________________
@@ -74,8 +87,13 @@ function Unstable {
 
 clear
 echo
-echo "Alterando a source.list"
+echo "Alterando a source.list para Unstable"
+echo
+
+
 f_pausa
+
+
 echo -n > /etc/apt/sources.list
 echo "#------------------------------------------------------------------------------#" >> /etc/apt/sources.list
 echo "#                   OFFICIAL DEBIAN REPOS                    " >> /etc/apt/sources.list
@@ -88,8 +106,10 @@ echo "#" >> /etc/apt/sources.list
 echo
 echo "Sources list alterada para Unstable main contrib non-free"
 echo
+
+
 f_pausa
-echo
+
 }
 
 #______________________________________________________________________________________________
@@ -97,8 +117,13 @@ echo
 function GoogleChrome { 
 clear
 echo
-echo "Alterando a source.list"
+echo "Adicionando Google Chrome a source.list"
+echo
+
+
 f_pausa
+
+
 echo "#" >> /etc/apt/sources.list
 echo "#------------------------------------------------------------------------------#" >> /etc/apt/sources.list
 echo "#                      UNOFFICIAL  REPOS                       " >> /etc/apt/sources.list
@@ -110,8 +135,11 @@ echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /e
 echo "#" >> /etc/apt/sources.list
 echo
 echo "Sources list alterada!"
-f_pausa
 echo
+
+
+f_pausa
+
 }
 
 #_____________________________________________________________________________________________
@@ -120,8 +148,13 @@ function Firefox {
 
 clear
 echo
-echo "Alterando a source.list"
+echo "Adicionando Firefox a source.list"
+echo
+
+
 f_pausa
+
+
 echo "#" >> /etc/apt/sources.list
 echo "#------------------------------------------------------------------------------#" >> /etc/apt/sources.list
 echo "#                      UNOFFICIAL  REPOS                       " >> /etc/apt/sources.list
@@ -132,8 +165,11 @@ echo "deb http://http.debian.net/debian unstable main" >> /etc/apt/sources.list
 echo "#" >> /etc/apt/sources.list
 echo
 echo "Sources list alterada!"
-f_pausa
 echo
+
+
+f_pausa
+
 }
 
 #______________________________________________________________________________________________
@@ -141,8 +177,13 @@ echo
 function Spotify { 
 clear
 echo
-echo "Alterando a source.list"
+echo "Adicionando Spotify a source.list"
+echo
+
+
 f_pausa
+
+
 echo "#" >> /etc/apt/sources.list
 echo "#------------------------------------------------------------------------------#" >> /etc/apt/sources.list
 echo "#                      UNOFFICIAL  REPOS                       " >> /etc/apt/sources.list
@@ -153,8 +194,11 @@ echo "deb http://repository.spotify.com stable non-free" >> /etc/apt/sources.lis
 echo "#" >> /etc/apt/sources.list
 echo
 echo "Sources list alterada!"
-f_pausa
 echo
+
+
+f_pausa
+
 }
 
 #________________________________________________________________________________________________
@@ -162,8 +206,13 @@ echo
 function Sublime { 
 clear
 echo
-echo "Alterando a source.list"
+echo "Adicionando o Sublime a source.list"
+echo
+
+
 f_pausa
+
+
 echo "#" >> /etc/apt/sources.list
 echo "#------------------------------------------------------------------------------#" >> /etc/apt/sources.list
 echo "#                      UNOFFICIAL  REPOS                       " >> /etc/apt/sources.list
@@ -174,8 +223,11 @@ echo "deb https://download.sublimetext.com/ apt/stable/" >> /etc/apt/sources.lis
 echo "#" >> /etc/apt/sources.list
 echo
 echo "Sources list alterada!"
-f_pausa
 echo
+
+
+f_pausa
+
 }
 
 #____________________________________________________________________________________________
@@ -184,10 +236,18 @@ function Update {
 clear
 echo
 echo "Atualizando com Update"
-f_pausa
-apt update
-f_pausa
 echo
+
+
+f_pausa
+
+
+apt update
+echo "ok"
+
+
+f_pausa
+
 }
 
 #____________________________________________________________________________________________
@@ -196,10 +256,20 @@ function Full-upgrade {
 clear
 echo
 echo "Atualizando com full-upgrade"
-f_pausa
-apt full-upgrade
-f_pausa
 echo
+
+
+f_pausa
+
+
+apt full-upgrade
+echo
+echo "OK"
+echo
+
+
+f_pausa
+
 }
 
 #____________________________________________________________________________________________
@@ -208,17 +278,25 @@ function instalar {
 clear
 echo
 echo "Instalando I3wm, I3blocks, LightDM e Thunar"
-f_pausa
-apt install i3 i3blocks lightdm thunar -y
-f_pausa
 echo
+
+
+f_pausa
+
+
+apt install i3 i3blocks lightdm thunar -y
+echo
+
+
+f_pausa
+
 }
 
 #____________________________________________________________________________________________
 
 function f_pausa { 
 
-for i in `seq 1 100`; do echo -en "$i %\b\b\b\b\b\b"; sleep 0.2; done
+for i in `seq 1 100`; do echo -en "$i %\b\b\b\b\b\b"; sleep 0.08; done
 
 }
 

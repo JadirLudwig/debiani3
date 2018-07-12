@@ -6,15 +6,21 @@ function Update {
 clear
 echo
 echo "Atualizando com Update"
+echo
+
+
 f_pausa
+
+
 apt update
 echo
+echo "Upgrade"
+apt full-upgrade
+echo
+
+
 f_pausa
-echo
-apt upgrade
-echo
-f_pausa
-echo
+
 }
 
 #____________________________________________________________________________________________
@@ -43,7 +49,12 @@ apt install -t unstable firefox
 #apt-get install firefox
 ### Para instalar a versão beta do Mozila Firefox veja o site http://mozilla.debian.net/
 #
+echo
+
+
 f_pausa
+
+
 }
 
 #____________________________________________________________________________________________
@@ -58,7 +69,12 @@ function ConfSudo {
 
 echo
 echo -n 'Digite o nome para o usuário sudo: ' && read nome_do_sudo && usermod -G adm,sudo $nome_do_sudo
+echo
+
+
 f_pausa
+
+
 echo "Ok"
 echo
 }
@@ -72,41 +88,57 @@ echo
 echo "Configurando o sitema ..."
 f_pausa
 echo "Consedendo as permisões nescessária..."
+echo
+
+
 f_pausa
+
+
 echo
 chmod +x battery cpu fehbg audio ip-address wallpaperrandomize.sh
 echo "Movendo arquivos..."
 echo
+
+
 f_pausa
+
+
 echo
-mv /home/$USER/debiani3/a.jpg /home/$USER/.config/i3/background
-mv /home/$USER/debiani3/b.jpg /home/$USER/.config/i3/background
-mv /home/$USER/debiani3/c.jpg /home/$USER/.config/i3/background
-mv /home/$USER/debiani3/d.jpg /home/$USER/.config/i3/background
-mv /home/$USER/debiani3/e.jpg /home/$USER/.config/i3/background
-mv /home/$USER/debiani3/f.jpg /home/$USER/.config/i3/background
-mv /home/$USER/debiani3/g.jpg /home/$USER/.config/i3/background
-mv /home/$USER/debiani3/config /home/$USER/.config/i3/config
-mv /home/$USER/debiani3/i3blocks.conf /home/$USER/.config/i3/
-mv /home/$USER/debiani3/audio /home/$USER/.config/i3/
-mv /home/$USER/debiani3/battery /home/$USER/.config/i3/
-mv /home/$USER/debiani3/ip-address /home/$USER/.config/i3/
-mv /home/$USER/debiani3/cpu /home/$USER/.config/i3/
-mv /home/$USER/debiani3/fehbg /home/$USER/.config/i3/
-mv /home/$USER/debiani3/wallpaperrandomize /home/$USER/.config/i3/
-mv /home/$USER/debiani3/uca.xml /home/$USER/.config/Thunar/uca.xml
+mkdir -p ~/.config/i3/background/
+mv ~/debiani3/a.jpg ~/.config/i3/background/
+mv ~/debiani3/b.jpg ~/.config/i3/background/
+mv ~/debiani3/c.jpg ~/.config/i3/background/
+mv ~/debiani3/d.jpg ~/.config/i3/background/
+mv ~/debiani3/e.jpg ~/.config/i3/background/
+mv ~/debiani3/f.jpg ~/.config/i3/background/
+mv ~/debiani3/g.jpg ~/.config/i3/background/
+mv ~/debiani3/config ~/.config/i3/config
+mv ~/debiani3/i3blocks.conf ~/.config/i3/
+mv ~/debiani3/audio ~/.config/i3/
+mv ~/debiani3/battery ~/.config/i3/
+mv ~/debiani3/ip-address ~/.config/i3/
+mv ~/debiani3/cpu ~/.config/i3/
+mv ~/debiani3/fehbg ~/.config/i3/
+mv ~/debiani3/wallpaperrandomize.sh ~/.config/i3/
+mv ~/debiani3/uca.xml ~/.config/Thunar/uca.xml
 echo "Configurando o Grub ..."
 echo
+
+
 f_pausa
+
+
 echo
-mv /home/$USER/debiani3/bg.jpg /home/$USER/.config/grub/background/
+mkdir -p ~/.config/grub/background/
+mv ~/debiani3/bg.jpg ~/.config/grub/background/
 echo "GRUB_BACKGROUND=~/.config/grub/background/bg.jpg">> /etc/default/grub
 update-grub
 f_pausa
 echo
 echo "Configurações terminadas"
-f_pausa
 echo
+
+f_pausa
 }
 
 #____________________________________________________________________________________________
@@ -177,6 +209,9 @@ echo "#####        #####  ####    #    ####"
 echo
 sleep 1
 echo "REINICIANDO A MAQUINA"
+echo
+
+f_pausa
 
 reboot
 
@@ -186,7 +221,7 @@ reboot
 
 function f_pausa {
 
-for i in `seq 1 100`; do echo -en "$i %\b\b\b\b\b\b"; sleep 0.2; done
+for i in `seq 1 100`; do echo -en "$i %\b\b\b\b\b\b"; sleep 0.08; done
 
 }
 
