@@ -3,7 +3,7 @@ Shell script para a construção de um Debian com interface gráfica i3wm custom
 
 Passo a passo
 
-1 - Instale o Debian netinstall sem interface gráfica
+1 - Instale o Debian netinstall sem interface gráfica ( deixe marcado para instalação apenas os utilitários de sistema padrão )
 
 2 - Com o sistema instalado e logado como root instale o git ( # apt install git )
 
