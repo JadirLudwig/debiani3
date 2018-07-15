@@ -1,5 +1,5 @@
 # debiani3
-Shell script para a construção de um Debian com interface gráfica i3wm
+Shell script para a construção de um Debian com interface gráfica i3wm customizado
 
 Passo a passo
 
@@ -13,6 +13,6 @@ Passo a passo
 
 5 - Leia e modifique os script caso queira por exemplo que o script instale ou não alguns programas ( # nano + o nome do script )
 
-6 - Torne o script execute.sh executável ( # chmod +x execute.sh )
+6 - Torne o script passo1.sh executável ( # chmod +x passo1.sh )
 
-7 - Execute o script ( # ./execute.sh )
+7 - Execute o script ( # ./passo1.sh )
