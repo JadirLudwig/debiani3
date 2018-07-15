@@ -36,7 +36,24 @@ echo
 ############## Adicione ou remova estes programas ao seu gosto ###############
 ##############################################################################
 
-apt install feh catfish p7zip gedit xfce4-terminal vlc cmus cli-visualizer hddtemp lm-sensors parcellite scrot curl simplescreenrecorder unar compton flatpak sudo -y
+apt install feh -y
+apt install catfish -y
+apt install p7zip -y
+apt install gedit -y
+apt install xfce4-terminal -y
+apt install vlc -y
+apt install cmus -y
+apt install cli-visualizer -y
+apt install hddtemp -y
+apt install lm-sensors -y
+apt install parcellite -y
+apt install scrot -y
+apt install curl -y
+apt install simplescreenrecorder -y
+apt install unar -y
+apt install compton -y
+apt install flatpak -y
+apt install sudo -y
 
 
 ### Mozila Firefox para o Debian Stable
@@ -104,23 +121,23 @@ f_pausa
 
 
 echo
-mkdir -p ~/.config/i3/background/
-mv ~/debiani3/a.jpg ~/.config/i3/background/
-mv ~/debiani3/b.jpg ~/.config/i3/background/
-mv ~/debiani3/c.jpg ~/.config/i3/background/
-mv ~/debiani3/d.jpg ~/.config/i3/background/
-mv ~/debiani3/e.jpg ~/.config/i3/background/
-mv ~/debiani3/f.jpg ~/.config/i3/background/
-mv ~/debiani3/g.jpg ~/.config/i3/background/
-mv ~/debiani3/config ~/.config/i3/config
-mv ~/debiani3/i3blocks.conf ~/.config/i3/
-mv ~/debiani3/audio ~/.config/i3/
-mv ~/debiani3/battery ~/.config/i3/
-mv ~/debiani3/ip-address ~/.config/i3/
-mv ~/debiani3/cpu ~/.config/i3/
-mv ~/debiani3/fehbg ~/.config/i3/
-mv ~/debiani3/wallpaperrandomize.sh ~/.config/i3/
-mv ~/debiani3/uca.xml ~/.config/Thunar/uca.xml
+mkdir -p /home/$USER/.config/i3/background/
+mv /home/$USER/debiani3/a.jpg /home/$USER/.config/i3/background/
+mv /home/$USER/debiani3/b.jpg /home/$USER/.config/i3/background/
+mv /home/$USER/debiani3/c.jpg /home/$USER/.config/i3/background/
+mv /home/$USER/debiani3/d.jpg /home/$USER/.config/i3/background/
+mv /home/$USER/debiani3/e.jpg /home/$USER/.config/i3/background/
+mv /home/$USER/debiani3/f.jpg /home/$USER/.config/i3/background/
+mv /home/$USER/debiani3/g.jpg /home/$USER/.config/i3/background/
+mv /home/$USER/debiani3/config /home/$USER/.config/i3/config
+mv /home/$USER/debiani3/i3blocks.conf /home/$USER/.config/i3/
+mv /home/$USER/debiani3/audio /home/$USER/.config/i3/
+mv /home/$USER/debiani3/battery /home/$USER/.config/i3/
+mv /home/$USER/debiani3/ip-address /home/$USER/.config/i3/
+mv /home/$USER/debiani3/cpu /home/$USER/.config/i3/
+mv /home/$USER/debiani3/fehbg /home/$USER/.config/i3/
+mv /home/$USER/debiani3/wallpaperrandomize.sh /home/$USER/.config/i3/
+mv /home/$USER/debiani3/uca.xml /home/$USER/.config/Thunar/uca.xml
 echo "Configurando o Grub ..."
 echo
 
@@ -129,8 +146,8 @@ f_pausa
 
 
 echo
-mkdir -p ~/.config/grub/background/
-mv ~/debiani3/bg.jpg ~/.config/grub/background/
+mkdir -p /home/$USER/.config/grub/background/
+mv /home/$USER/debiani3/bg.jpg /home/$USER/.config/grub/background/
 echo "GRUB_BACKGROUND=~/.config/grub/background/bg.jpg">> /etc/default/grub
 update-grub
 f_pausa
@@ -213,7 +230,7 @@ echo
 
 f_pausa
 
-reboot
+#reboot
 
 }
 
@@ -221,7 +238,7 @@ reboot
 
 function f_pausa {
 
-for i in `seq 1 100`; do echo -en "$i %\b\b\b\b\b\b"; sleep 0.08; done
+for i in `seq 1 100`; do echo -en "# $i%\b\b\b\b\b" ; sleep 0.08; done
 
 }
 
@@ -236,3 +253,4 @@ ConfSudo
 Move
 Logo
 Fim
+exit

@@ -308,7 +308,7 @@ Testing
 #GoogleChrome
 Firefox
 #Spotify
-Sublime
+#Sublime
 Update
 Full-upgrade
 instalar
