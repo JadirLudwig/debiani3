@@ -294,6 +294,14 @@ f_pausa
 
 #____________________________________________________________________________________________
 
+function passo2 { 
+
+chmod +x passo2.sh
+
+}
+
+#____________________________________________________________________________________________
+
 function f_pausa { 
 
 for i in `seq 1 100`; do echo -en "$i %\b\b\b\b\b\b"; sleep 0.08; done
@@ -312,4 +320,4 @@ Firefox
 Update
 Full-upgrade
 instalar
-exit
+./passo2.sh
